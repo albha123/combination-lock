@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,48 +6,54 @@
     <title></title>
 </head>
 <body>
-    <button id="r1c1" onclick="1()">1</button>
-    <button id="r1c2" onclick="2()">2</button>
-    <button id="r1c3" onclick="3()">3</button>
+    <button onclick="ButtonWasClicked(1);" >1</button>
+    <button onclick="ButtonWasClicked(2);" >2</button>
+    <button onclick="ButtonWasClicked(3);" >3</button>
     <br />
-    <button id="r2c1" onclick="4()">4</button>
-    <button id="r2c2" onclick="5()">5</button>
-    <button id="r2c3" onclick="6()">6</button>
+    <button onclick="ButtonWasClicked(4);" >4</button>
+    <button onclick="ButtonWasClicked(5);" >5</button>
+    <button onclick="ButtonWasClicked(6);" >6</button>
     <br />
-    <button id="r3c1" onclick="7()">7</button>
-    <button id="r3c2" onclick="8()">8</button>
-    <button id="r3c3" onclick="9()">9</button>
+    <button onclick="ButtonWasClicked(7);" >7</button>
+    <button onclick="ButtonWasClicked(8);" >8</button>
+    <button onclick="ButtonWasClicked(9);" >9</button>
     <br />
-    <div class="popup1" oncontextmenu="correctCombination">Correct combination!</div>
-    <div class="popup2" oncontextmenu="wrongCombination">Wrong combination</div>
-    
+    <h2></h2>
+
 
     <script>
-        var currentCombination: int = 0;
-        var correctCombination: int = 3812;
-        var buttonClickProgress: int;
-
-        function buttonWasClicked(buttonNmb: int) {
-
-            currentCombination += buttonNmb;
-            buttonClickProgress *= 
-        
-
-        function correctCombination()
-
-        if (currentCombination == correctCombination) {
-            document.getElementsByClassName('popup1');
-            buttonClickProgress = 0;
-            currentCombination = 0;
+        var currentCombination : int = 0;
+        var correctCombination : int = 3812;
+        var buttonClickProgress : int;
+        function ButtonWasClicked (buttonNmb : int) {
+ 
+        currentCombination += buttonNmb;
+        buttonClickProgress++;
+ 
+            if (buttonClickProgress < 4) {
+                currentCombination *= 10;
+            }
+            else {
+                if (currentCombination == correctCombination) {
+                    (currentCombination == correctCombination) 
+                    document.getElementsByClassName('correct()');
+                    buttonClickProgress = 0;
+                    currentCombination = 0;
+                }
+                else {
+                    (currentCombination == wrongCombination) { 
+                            document.getElementsByClassName('wrong()');
+                            buttonClickProgress = 0;
+                            currentCombination = 0;
+                 }
+            function correct() {
+             alert("Wrong combination");
+            }
+            function wrong() {
+             alert("Correct combination!");
+            }
         }
-
-        if (currentCombination == wrongCombination) {
-            document.getElementsByClassName('popup2');
-            buttonClickProgress = 0;
-            currentCombination = 0;
         }
-        }
-
     </script>
 </body>
 </html>
