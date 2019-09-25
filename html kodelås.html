@@ -6,54 +6,58 @@
     <title></title>
 </head>
 <body>
-    <button onclick="ButtonWasClicked(1);" >1</button>
-    <button onclick="ButtonWasClicked(2);" >2</button>
-    <button onclick="ButtonWasClicked(3);" >3</button>
+    <button onclick="ButtonWasClicked(this);">1</button>
+    <button onclick="ButtonWasClicked(this);">2</button>
+    <button onclick="ButtonWasClicked(this);">3</button>
     <br />
-    <button onclick="ButtonWasClicked(4);" >4</button>
-    <button onclick="ButtonWasClicked(5);" >5</button>
-    <button onclick="ButtonWasClicked(6);" >6</button>
+    <button onclick="ButtonWasClicked(this);">4</button>
+    <button onclick="ButtonWasClicked(this);">5</button>
+    <button onclick="ButtonWasClicked(this);">6</button>
     <br />
-    <button onclick="ButtonWasClicked(7);" >7</button>
-    <button onclick="ButtonWasClicked(8);" >8</button>
-    <button onclick="ButtonWasClicked(9);" >9</button>
+    <button onclick="ButtonWasClicked(this);">7</button>
+    <button onclick="ButtonWasClicked(this);">8</button>
+    <button onclick="ButtonWasClicked(this);">9</button>
     <br />
-    <h2></h2>
+    <button onclick="sjekkPassord()">Ok</button>
 
 
     <script>
-        var currentCombination : int = 0;
-        var correctCombination : int = 3812;
-        var buttonClickProgress : int;
-        function ButtonWasClicked (buttonNmb : int) {
- 
-        currentCombination += buttonNmb;
-        buttonClickProgress++;
- 
-            if (buttonClickProgress < 4) {
-                currentCombination *= 10;
+        var currentCombination = 0;
+        var correctCombination = 3812;
+        var buttonClickProgress = "";
+
+
+        function ButtonWasClicked(buttonNmb) {
+
+
+
+
+            buttonClickProgress += buttonNmb.innerHTML;
+            console.log(buttonClickProgress);
+
+        }
+
+        function sjekkPassord() {
+            if (buttonClickProgress == correctCombination) {
+                console.log("RIKTIG");
+                buttonClickProgress = "";
+                sweet();
             }
+
             else {
-                if (currentCombination == correctCombination) {
-                    (currentCombination == correctCombination) 
-                    document.getElementsByClassName('correct()');
-                    buttonClickProgress = 0;
-                    currentCombination = 0;
-                }
-                else {
-                    (currentCombination == wrongCombination) { 
-                            document.getElementsByClassName('wrong()');
-                            buttonClickProgress = 0;
-                            currentCombination = 0;
-                 }
-            function correct() {
-             alert("Wrong combination");
+                console.log("FEIL"); 
+                buttonClickProgress = "";
+                nei();
             }
-            function wrong() {
-             alert("Correct combination!");
-            }
+
         }
+        function sweet() {
+            alert("aww yeee");
         }
+        function nei() {
+            alert("feeeil");
+        }
+
     </script>
 </body>
 </html>
